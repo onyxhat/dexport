@@ -8,18 +8,12 @@ variables, networks, restart policies, resource limits, and more.
 
 ## Installation
 
-**From source** (requires Go 1.22+):
+**From source** (requires Go 1.26+):
 
 ```sh
 git clone https://github.com/onyxhat/dexport
 cd dexport
 go build -o dexport .
-```
-
-Move the binary somewhere on your `PATH`:
-
-```sh
-mv dexport /usr/local/bin/
 ```
 
 **Cross-compilation** is supported for any OS and architecture Go targets:
@@ -29,6 +23,11 @@ GOOS=linux  GOARCH=amd64 go build -o dexport-linux-amd64 .
 GOOS=linux  GOARCH=arm64 go build -o dexport-linux-arm64 .
 GOOS=darwin GOARCH=arm64 go build -o dexport-darwin-arm64 .
 GOOS=windows GOARCH=amd64 go build -o dexport.exe .
+```
+
+**Convenience build script** automatically handles cross-compilation builds (requires Powershell/pwsh 5.0+)
+```sh
+./build.ps1
 ```
 
 ## Requirements

@@ -23,9 +23,6 @@ bin/
 go.work
 go.work.sum
 
-# env file
-.env
-
 # AI assistant metadata
 .claude/
 .opencode/
