@@ -8,7 +8,12 @@ variables, networks, restart policies, resource limits, and more.
 
 ## Installation
 
-**From source** (requires Go 1.26+):
+**Using Go Install**
+```sh
+go install github.com/onyxhat/dexport@latest
+```
+
+**From source** (requires Go 1.25+):
 
 ```sh
 git clone https://github.com/onyxhat/dexport
