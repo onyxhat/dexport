@@ -20,7 +20,7 @@ foreach ($g in $BuildArch.Split(',')) {
 
     try {
         Write-Host "Building: ${env:GOOS} (${env:GOARCH})"
-        & go build -ldflags="-s -w" -o "${MyPath}/${BinDir}/${env:GOOS}/${env:GOARCH}/${MyProject}${Ext}"
+        & go build -ldflags="-s -w" -o "${MyPath}/${BinDir}/${MyProject}-${env:GOOS}-${env:GOARCH}${Ext}"
     }
 
     catch {
