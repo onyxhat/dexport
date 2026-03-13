@@ -40,7 +40,7 @@ jobs:
       uses: actions/upload-artifact@v7.0.0
       with:
         name: ${{ env.CI_REPOSITORY_NAME_SLUG }}
-        path: ${{ env.BINARY_OUTDIR }}/*
+        path: ${{ env.BINARY_OUTDIR }}/**
         if-no-files-found: error
 
   release:
@@ -128,13 +128,13 @@ jobs:
       with:
         version: latest
         files: |
-          ./${{ env.BINARY_OUTDIR }}/*
+          ./${{ env.BINARY_OUTDIR }}/**
         args: -8
 
     - name: Create Release
       uses: ncipollo/release-action@v1
       with:
-        artifacts: ${{ env.BINARY_OUTDIR }}/*
+        artifacts: ${{ env.BINARY_OUTDIR }}/**
         name: ${{ env.CI_REPOSITORY_NAME_SLUG }}-${{ steps.select-ver.outputs.tag }}
         commit: ${{ github.sha }}
         tag: ${{ steps.select-ver.outputs.tag }}
