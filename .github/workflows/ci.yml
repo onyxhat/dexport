@@ -131,11 +131,11 @@ jobs:
           ./${{ env.BINARY_OUTDIR }}/*
         args: -8
 
-    - name: Create PreRelease
+    - name: Create Release
       uses: ncipollo/release-action@v1
       with:
         artifacts: ${{ env.BINARY_OUTDIR }}/*
-        name: ${{ env.CI_REPOSITORY_NAME_SLUG }}-${{ steps.select-ver.outputs.tag }}-rc
+        name: ${{ env.CI_REPOSITORY_NAME_SLUG }}-${{ steps.select-ver.outputs.tag }}
         commit: ${{ github.sha }}
         tag: ${{ steps.select-ver.outputs.tag }}
         token: ${{ secrets.ONYXHAT_PAT }}
